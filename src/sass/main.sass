@@ -1,0 +1,122 @@
+@import ./config.scss
+@import ../../bower_components/bootstrap/scss/bootstrap.scss
+
+.img-resp
+  height: 1.35rem + 1.5rem * 2
+  width: auto
+.f-row
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+.f-col
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+.c-list
+  list-style-type: none
+  padding-left: 0
+.h100
+  height: 100%
+.w100
+  width: 100%
+.hauto
+  height: auto
+.wauto
+  width: auto
+$navbar-text-height: 1rem
+$navbar-internal-spacing: 0.4rem
+
+.navbar
+  line-height: $navbar-text-height
+  font-size: $navbar-text-height
+  padding: $navbar-internal-spacing 0
+  a.navbar-brand
+    text-transform: uppercase
+    color: rgba(255, 255, 255, 1)
+    font-family: 'Open Sans','Lato',sans-serif
+  ul.navbar-nav
+    margin: $navbar-internal-spacing*0.35 0
+    li.nav-item
+      a.nav-link
+        text-transform: uppercase
+        color: rgba(255, 255, 255, 1)
+        font-family: 'Open Sans','Lato',sans-serif
+  .mobile
+    display: flex
+    flex-direction: column
+    align-items: center
+    div.flex-row
+      width: 100%
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      a.navbar-brand
+      button
+    ul.navbar-nav
+      display: flex
+      flex-direction: column
+      align-items: center
+      li.nav-item
+        margin-left: 0
+        &:first-child
+        a.nav-link
+  .desktop
+    a.navbar-brand
+    ul.navbar-nav
+      li.nav-item
+        margin-left: 1.25rem
+        &:first-child
+          margin-left: 0
+        a.nav-link
+
+$cards-margin: 1rem
+
+.container#main
+  .card
+    margin-bottom: $cards-margin
+    .card-block
+      h4.card-title
+        a
+      div
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        ul
+          font-size: 0.8rem
+          display: flex
+          flex-direction: row
+          justify-content: space-between
+          list-style-type: none
+          align-items: flex-end
+          padding-left: 0
+          padding-right: 0
+          li
+            margin-left: 0
+            margin-right: 1rem
+        p.card-text
+          font-size: 1.2rem
+    .card-block:last-child
+      p
+      a
+    p
+  .card:first-child
+    margin-top: $cards-margin
+$footer-padding: 2rem
+footer
+  padding-top: $footer-padding
+  padding-bottom: $footer-padding
+  *,a,a:hover,a:focus,a:active
+    color: white
+  >.container
+.footer-dark
+  *,a,a:hover,a:focus,a:active
+    color: white
+  >.container
+    >.row
+      >div
+.footer-light
+  *,a,a:hover,a:focus,a:active
+    color: white
+  >.container
+    p
+      margin-bottom: 0;

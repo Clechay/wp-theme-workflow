@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "tags": ["black", "blue", "brown", "gray", "green", "orange", "pink", "purple", "red", "silver", "tan", "white", "yellow", "dark", "light", "one-column", "two-columns", "three-columns", "four-columns", "left-sidebar", "right-sidebar", "fixed-layout", "fluid-layout", "flexible-header", "responsive-layout", "accessibility-ready", "blavatar", "buddypress", "custom-background", "custom-colors", "custom-header", "custom-menu", "editor-style", "featured-image-header", "featured-images", "front-page-post-form", "full-width-template", "microformats", "post-formats", "rtl-language-support", "sticky-post", "theme-options", "threaded-comments", "translation-ready", "holiday", "photoblogging", "seasonal"],
+    "themeName": "theme name",
+    "themeURI": "theme uri on wordpress.org",
+    "author": "author name",
+    "authorURI": "authorURI",
+    "description": "description",
+    "version": "0.1",
+    "license": "MIT License",
+    "licenseURI": "https://opensource.org/licenses/MIThttps://opensource.org/licenses/MIT",
+    "textDomain": "simple-name",
+    "postScriptum": "cool post scriptum"
+  },
+  "dist": "PUT YOUR DIST PATH HIRE! IT MUST BE A PATH TO THEME SUBDIRECTORY IN WORDPRESS THEMES DIRECTORY!",
+  "sass": {
+    "main_files_glob": "src/sass/*",
+    "main_files_dist": "css",
+    "style_css_src": "src/sass/main.sass"
+  },
+  "general_locals":{
+    "shiba":"inu"
+  },
+  "jade": {
+    "main_globs": [
+      "src/*.jade"
+    ],
+    "sub_globs": [
+      {
+        "from": "src/inc/*.jade",
+        "to": "inc"
+      }
+    ],
+    "locals":{
+      "test":"test"
+    }
+  },
+  "copy": {
+    "from_src": [
+      {
+        "from": "js/app.js",
+        "to": "js/app.js"
+      },
+      {
+        "from": "functions.php",
+        "to": "functions.php"
+      }
+    ],
+    "from_res": [
+      {
+        "from": "img",
+        "to": "img"
+      }
+    ],
+    "from_bow": {
+      "jquery": [
+        {
+          "from": "dist/jquery.js",
+          "to": "js/jquery.js"
+        },
+        {
+          "from": "dist/jquery.min.js",
+          "to": "js/jquery.min.js"
+        }
+      ],
+      "bootstrap": [
+        {
+          "from": "dist/js/bootstrap.js",
+          "to": "js/bootstrap.js"
+        },
+        {
+          "from": "dist/js/bootstrap.min.js",
+          "to": "js/bootstrap.min.js"
+        }
+      ]
+    },
+    "from_npm": {}
+  }
+}

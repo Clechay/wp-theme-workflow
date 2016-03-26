@@ -1,0 +1,78 @@
+html
+  head
+    block head
+      title Tutorial theme
+      meta(charset='utf-8')
+      meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no')
+      meta(http-equiv='x-ua-compatible', content='ie=edge')
+      link(rel='stylesheet', href="<?php bloginfo('stylesheet_url'); ?>")
+      link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato:700,900,400,300,100&subset=latin,latin-ext', type='text/css')
+    block head-middle
+    - wp_head()
+    block head-end
+  body
+    block header
+      nav.navbar.navbar-full.navbar-dark.bg-primary
+        .container.mobile.hidden-lg-up
+          div.flex-row
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#exCollapsingNavbar') ☰
+            a.navbar-brand(href="<?php echo home_url(); ?>") Site name
+          #exCollapsingNavbar.collapse
+            - wp_nav_menu ( array('menu_class'=>'nav navbar-nav pull-xs-right','container'=>'','depth' => 1,'walker' => new Custom_Walker_Nav_Menu) );
+        .container.desktop.hidden-md-down
+          a.navbar-brand(href="#")
+            img.c-img-resp(src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.svg")
+          - wp_nav_menu ( array('menu_class'=>'nav navbar-nav pull-xs-right','container'=>'','depth' => 1,'walker' => new Custom_Walker_Nav_Menu) );
+    .container#main
+      block before_posts
+      block posts
+        - if ( have_posts() ) : while ( have_posts() ) : the_post();
+        .card.c-stright(id='post-<?php the_ID(); ?>')
+          .card-block
+            h4.card-title
+              a(href='<?php the_permalink() ?>', rel='bookmark', title='<?php the_title_attribute(); ?>')
+                -the_title();
+            p.card-text
+              -the_content();
+          .card-block
+            div
+              -the_category();
+              p
+                -the_time('m/j/Y');
+        - endwhile;
+        - else :
+        - _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
+        - endif;
+      block after_posts
+    #enlonger_hook(style="width:100%") // used by script to stick footer to the bottom of the screen if there is not enought content
+    footer.bg-primary.footer-dark
+      .container
+        .row
+          .col-xs-12.col-md-6.col-lg-3.c-col.c-nc-1
+            b rss
+            a(href="<?php echo bloginfo('atom_url'); ?>") atom
+            a(href="<?php echo bloginfo('rss_url'); ?>") rss 0.92
+            a(href="<?php echo bloginfo('rdf_url'); ?>") rdf / rss 1.0
+            a(href="<?php echo bloginfo('rss2_url'); ?>") rss 2.0
+          .col-xs-12.col-md-6.col-lg-3.c-col.c-nc-2
+            b Lorem ipsum
+            a lorem ipsum
+            a lorem ipsum
+            a lorem ipsum
+            a lorem ipsum
+          .col-xs-12.col-md-6.col-lg-3.c-col.c-nc-3
+            b Lorem ipsum
+            a lorem ipsum
+            a lorem ipsum
+            a lorem ipsum
+            a lorem ipsum
+          .col-xs-12.col-md-6.col-lg-3.c-col.c-nc-4
+            b we use:
+            a(href="https://getbootstrap.com/") bootstrap (4 alpha 2)
+            a(href="http://gulpjs.com/") gulp
+            a(href="https://github.com/dlmanning/gulp-sass") gulp-sass
+            a(href="https://github.com/oroce/gulp-jade-php") gulp-jade-php
+    footer.bg-info.footer-light      
+      .container
+        p © Copyright holder - Lorem - theme by Lorem Ipsum (example.com)
+  - wp_footer()

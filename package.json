@@ -1,0 +1,33 @@
+{
+  "name": "wp-theme-workflow",
+  "version": "0.1.0",
+  "description": "[unstable] wp-theme-workflow",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Łukasz Kleczaj (luke.clechay@gmail.com)",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.3.4",
+    "eslint": "^2.4.0",
+    "fs-extra": "^0.26.5",
+    "gaze": "^1.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-header": "^1.7.1",
+    "gulp-if": "^2.0.0",
+    "gulp-jade-php": "^2.0.0-0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-uglify": "^1.5.3",
+    "jade": "^1.11.0",
+    "merge": "^1.2.0",
+    "merge-stream": "^1.0.0",
+    "phpjade": "^1.4.2",
+    "progress": "^1.1.8",
+    "run-sequence": "^1.1.5",
+    "streamqueue": "^1.1.1",
+    "watch": "^0.17.1"
+  }
+}
